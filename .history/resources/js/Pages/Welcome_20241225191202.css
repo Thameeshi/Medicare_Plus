@@ -1,0 +1,112 @@
+/* welcome.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: linear-gradient(to right, #009688, #3f51b5);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+header p {
+    font-size: 1.25rem;
+    max-width: 650px;
+    margin: 0 auto 2rem auto;
+}
+
+header .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+header .cta-buttons a {
+    background-color: #00796b;
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+header .cta-buttons a:hover {
+    background-color: #004d40;
+}
+
+.image-container img {
+    transition: transform 0.3s ease-in-out;
+}
+
+nav {
+    background-color: white;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+    color: #00796b;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-size: 1.125rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #004d40;
+}
+
+main {
+    padding: 4rem 2rem;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+section p {
+    font-size: 1.125rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+}
+
+.grid div {
+    background-color: #e0f2f1;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.grid div h3 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #004d40;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
