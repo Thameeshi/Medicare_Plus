@@ -1,3 +1,4 @@
+import { HomeIcon } from '@heroicons/react/outline'; // Import the HomeIcon
 import Dropdown from '@/Components/Dropdown';
 import NavLink from '@/Components/NavLink';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
@@ -17,13 +18,9 @@ export default function AuthenticatedLayout({ header, children }) {
                     <div className="flex h-16 justify-between">
                         <div className="flex">
                             <div className="flex shrink-0 items-center">
-                                {/* Use the image from the public folder */}
+                                {/* Replace ApplicationLogo with HomeIcon */}
                                 <Link href="/">
-                                    <img
-                                        src="/images/home.png" // Path to the image in the public directory
-                                        alt="Home"
-                                        className="block h-9 w-auto"
-                                    />
+                                    <HomeIcon className="block h-9 w-auto text-gray-800" />
                                 </Link>
                             </div>
 

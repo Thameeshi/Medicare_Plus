@@ -1,7 +1,7 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, usePage } from '@inertiajs/react';
 import { useState } from 'react';
-import { FaHeartbeat, FaCalendarCheck, FaHandHoldingHeart } from 'react-icons/fa';
+import { FaHeartbeat, FaCalendarCheck, FaHandHoldingHeart } from 'react-icons/fa'; // For icons
 
 export default function Dashboard() {
     const { auth } = usePage().props; // Access the authenticated user data
@@ -19,7 +19,7 @@ export default function Dashboard() {
     return (
         <AuthenticatedLayout
             header={
-                <h2 className="text-4xl font-semibold leading-tight text-white">
+                <h2 className="text-4xl font-bold leading-tight text-white">
                     {getTimeOfDayGreeting()}, {auth.user.name}!
                 </h2>
             }
@@ -29,27 +29,18 @@ export default function Dashboard() {
             <div className="py-12 bg-gray-50">
                 <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
                     {/* Welcome Section */}
-                    <div className="bg-gradient-to-br from-purple-600 to-blue-500 shadow-xl rounded-lg mb-8 hover:shadow-2xl transition-shadow duration-300">
+                    <div className="bg-gradient-to-br from-purple-600 to-blue-500 shadow-xl rounded-lg mb-8">
                         <div className="p-8 text-white">
                             <h3 className="text-3xl font-bold mb-4">Welcome back, {auth.user.name}!</h3>
-                            <p className="text-lg">You're logged in! Manage your health records, appointments, and get personalized recommendations.</p>
+                            <p>You're logged in! Manage your health records, appointments, and get personalized recommendations.</p>
                         </div>
                     </div>
 
                     {/* User Profile */}
-                    <section className="bg-white shadow-lg rounded-lg border-l-4 border-purple-500 mb-8 p-6 hover:scale-105 transition-transform duration-300">
+                    <section className="bg-white shadow-lg rounded-lg border-l-4 border-purple-500 mb-8 p-6">
                         <h4 className="text-2xl font-semibold text-purple-600 mb-4">Your Profile</h4>
-                        <div className="flex items-center space-x-6 mb-4">
-                            <div className="w-20 h-20 bg-purple-600 rounded-full text-white flex items-center justify-center text-2xl font-bold">
-                                {auth.user.name[0]}
-                            </div>
-                            <div>
-                                <h5 className="font-medium text-gray-600">Name:</h5>
-                                <p className="text-gray-500">{auth.user.name}</p>
-                            </div>
-                        </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            {['Email', 'Date of Birth', 'Phone'].map((field, idx) => (
+                            {['Name', 'Email', 'Date of Birth', 'Phone'].map((field, idx) => (
                                 <div key={idx}>
                                     <h5 className="font-medium text-gray-600">{field}:</h5>
                                     <p className="text-gray-500">{auth.user[field.toLowerCase().replace(/ /g, '_')]}</p>
@@ -127,12 +118,10 @@ export default function Dashboard() {
 
 function ExpandableSection({ title, color, icon, isOpen, toggle, children }) {
     return (
-        <div className={`bg-white shadow-lg rounded-lg border-l-4 border-${color}-500 mb-8 p-6 hover:shadow-2xl transition-shadow duration-300`}>
+        <div className={`bg-white shadow-lg rounded-lg border-l-4 border-${color}-500 mb-8 p-6`}>
             <div className="flex justify-between items-center">
                 <div className="flex items-center space-x-3">
-                    <div className={`text-${color}-500 text-3xl transition-transform transform hover:scale-110`}>
-                        {icon}
-                    </div>
+                    <div className={`text-${color}-500 text-3xl`}>{icon}</div>
                     <h4 className={`text-2xl font-semibold text-${color}-600`}>{title}</h4>
                 </div>
                 <button
